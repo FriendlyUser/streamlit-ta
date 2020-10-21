@@ -38,13 +38,13 @@ data = yf.download(symbol,start,end)
 
 # Adjusted Close Price
 st.header(f"Adjusted Close Price\n {company_name}")
-data.ta.adjusted = "Adj Close"
-st.line_chart(data['Adj Close'])
+data.ta.adjusted = "Close"
+st.line_chart(data['Close'])
 
 # ## SMA and EMA
 #Simple Moving Average
 data.ta.sma(length=20, append=True)
-data['SMA'] = talib.SMA(data['Adj Close'], timeperiod = 20)
+data['SMA'] = talib.SMA(data['Close'], timeperiod = 20)
 
 # Exponential Moving Average
 data.ta.ema(length=20, append=True)
