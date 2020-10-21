@@ -15,7 +15,7 @@ st.sidebar.header('User Input Parameters')
 
 today = datetime.date.today()
 def user_input_features():
-    ticker = st.sidebar.text_input("Ticker", 'NTAR.CN')
+    ticker = st.sidebar.text_input("Ticker", 'CMC.CN')
     start_date = st.sidebar.text_input("Start Date", '2019-01-01')
     end_date = st.sidebar.text_input("End Date", f'{today}')
     return ticker, start_date, end_date
@@ -38,17 +38,15 @@ data = yf.download(symbol,start,end)
 st.write(data)
 # Adjusted Close Price
 st.header(f"Adjusted Close Price\n {company_name}")
-data.ta.adjusted = "Close"
-st.line_chart(data['Close'])
+st.line_chart(data["Close"])
 
 # ## SMA and EMA
 #Simple Moving Average
 data.ta.sma(length=20, append=True)
-data['SMA'] = talib.SMA(data['Close'], timeperiod = 20)
 
 # Exponential Moving Average
 data.ta.ema(length=20, append=True)
-
+st.write(data)
 # Plot
 st.header(f"Simple Moving Average vs. Exponential Moving Average\n {company_name}")
 st.line_chart(data[['Adj Close','SMA_20','EMA_20']])
