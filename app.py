@@ -15,7 +15,7 @@ st.sidebar.header('User Input Parameters')
 
 today = datetime.date.today()
 def user_input_features():
-    ticker = st.sidebar.text_input("Ticker", 'CMC.CN')
+    ticker = st.sidebar.text_input("Ticker", 'IP.CN')
     start_date = st.sidebar.text_input("Start Date", '2019-01-01')
     end_date = st.sidebar.text_input("End Date", f'{today}')
     return ticker, start_date, end_date
