@@ -87,5 +87,5 @@ st.line_chart(data[['adj_close','SMA_20','EMA_20']])
 # data['OBV'] = talib.OBV(data['Adj Close'], data['Volume'])/10**6
 
 # Plot
-st.header(f"On Balance Volume\n {company_name}")
-st.line_chart(data['OBV'])
+#st.header(f"On Balance Volume\n {company_name}")
+#st.line_chart(data['OBV'])
