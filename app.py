@@ -49,7 +49,7 @@ data.ta.ema(length=20, append=True)
 st.write(data)
 # Plot
 st.header(f"Simple Moving Average vs. Exponential Moving Average\n {company_name}")
-st.line_chart(data[['Adj Close','SMA_20','EMA_20']])
+st.line_chart(data[['adj_close','SMA_20','EMA_20']])
 
 # Bollinger Bands
 # data['upper_band'], data['middle_band'], data['lower_band'] = talib.BBANDS(data['Adj Close'], timeperiod =20)
