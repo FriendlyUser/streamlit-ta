@@ -35,7 +35,7 @@ end = pd.to_datetime(end)
 
 # Read data 
 data = yf.download(symbol,start,end)
-
+st.write(data)
 # Adjusted Close Price
 st.header(f"Adjusted Close Price\n {company_name}")
 data.ta.adjusted = "Close"
