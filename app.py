@@ -61,7 +61,7 @@ st.line_chart(data[['adj_close','BBL_20_2.0','BBM_20_2.0','BBU_20_2.0']])
 # ## RSI (Relative Strength Index)
 # RSI
 data.ta.rsi(length=20, append=True)
-
+st.write(data)
 # Plot
 st.header(f"Relative Strength Index\n {company_name}")
 st.line_chart(data['RSI_20', 'adj_close'])
