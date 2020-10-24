@@ -73,4 +73,6 @@ data.ta.pvol(length=20, append=True)
 # Plot
 st.header(f"Price-Volume\n {company_name}")
 st.write(data)
-st.line_chart(data[['PVOL', 'volume']])
+col1, col2 = st.beta_columns([3, 1])
+col1.line_chart(data[['PVOL']])
+col2.line_chart(data[['volume]])
