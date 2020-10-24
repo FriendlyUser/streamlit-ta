@@ -57,7 +57,7 @@ data.ta.bbands(length=20, append=True)
 st.write(data)
 # Plot
 st.header(f"Bollinger Bands\n {company_name}")
-st.line_chart(data[['adj_close','upper_band','middle_band','lower_band']])
+st.line_chart(data[['adj_close','BBL_20_2.0','BBM_20_2.0','BBU_20_2.0']])
 
 # ## MACD (Moving Average Convergence Divergence)
 # MACD
