@@ -52,11 +52,13 @@ st.header(f"Simple Moving Average vs. Exponential Moving Average\n {company_name
 st.line_chart(data[['adj_close','SMA_20','EMA_20']])
 
 # Bollinger Bands
+data.ta.bbands(length=20, append=True)
 # data['upper_band'], data['middle_band'], data['lower_band'] = talib.BBANDS(data['Adj Close'], timeperiod =20)
 
+help(ta.bbands)
 # Plot
-# st.header(f"Bollinger Bands\n {company_name}")
-# st.line_chart(data[['Adj Close','upper_band','middle_band','lower_band']])
+st.header(f"Bollinger Bands\n {company_name}")
+st.line_chart(data[['adj_close','upper_band','middle_band','lower_band']])
 
 # ## MACD (Moving Average Convergence Divergence)
 # MACD
