@@ -54,26 +54,9 @@ st.line_chart(data[['adj_close','SMA_20','EMA_20']])
 # Bollinger Bands
 data.ta.bbands(length=20, append=True)
 # data['upper_band'], data['middle_band'], data['lower_band'] = talib.BBANDS(data['Adj Close'], timeperiod =20)
-st.write(data)
 # Plot
 st.header(f"Bollinger Bands\n {company_name}")
 st.line_chart(data[['adj_close','BBL_20_2.0','BBM_20_2.0','BBU_20_2.0']])
-
-# ## MACD (Moving Average Convergence Divergence)
-# MACD
-# data['macd'], data['macdsignal'], data['macdhist'] = talib.MACD(data['Adj Close'], fastperiod=12, slowperiod=26, signalperiod=9)
-
-# Plot
-# st.header(f"Moving Average Convergence Divergence\n {company_name}")
-# st.line_chart(data[['macd','macdsignal']])
-
-## CCI (Commodity Channel Index)
-# CCI
-# cci = ta.trend.cci(data['High'], data['Low'], data['Close'], n=31, c=0.015)
-
-# Plot
-# st.header(f"Commodity Channel Index\n {company_name}")
-# st.line_chart(cci)
 
 # ## RSI (Relative Strength Index)
 # RSI
@@ -81,12 +64,13 @@ data.ta.rsi(length=20, append=True)
 
 # Plot
 st.header(f"Relative Strength Index\n {company_name}")
-st.line_chart(data['RSI_20'])
+st.line_chart(data['RSI_20', 'adj_close'])
 
 # ## OBV (On Balance Volume)
 # OBV
 # data['OBV'] = talib.OBV(data['Adj Close'], data['Volume'])/10**6
-
+data.ta.pvol(length=20, append=True)
 # Plot
-#st.header(f"On Balance Volume\n {company_name}")
-#st.line_chart(data['OBV'])
+st.header(f"Price-Volume\n {company_name}")
+st.line_chart(data['PVOL_20', 'adj_close'])
+st.write(data)
