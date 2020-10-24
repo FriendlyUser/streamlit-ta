@@ -21,7 +21,7 @@ def user_input_features():
     ta_range = st.sidebar.number_input("TA Range", min_value=1, max_value=50)
     return ticker, start_date, end_date, ta_range
 
-symbol, start, end = user_input_features()
+symbol, start, end, ta_range = user_input_features()
 
 def get_symbol(symbol):
     url = "http://d.yimg.com/autoc.finance.yahoo.com/autoc?query={}&region=1&lang=en".format(symbol)
