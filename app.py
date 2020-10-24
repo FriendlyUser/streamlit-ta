@@ -54,8 +54,7 @@ st.line_chart(data[['adj_close','SMA_20','EMA_20']])
 # Bollinger Bands
 data.ta.bbands(length=20, append=True)
 # data['upper_band'], data['middle_band'], data['lower_band'] = talib.BBANDS(data['Adj Close'], timeperiod =20)
-
-help(ta.bbands)
+st.write(data)
 # Plot
 st.header(f"Bollinger Bands\n {company_name}")
 st.line_chart(data[['adj_close','upper_band','middle_band','lower_band']])
