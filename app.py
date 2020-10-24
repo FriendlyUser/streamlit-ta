@@ -73,4 +73,4 @@ data.ta.pvol(length=20, append=True)
 # Plot
 st.header(f"Price-Volume\n {company_name}")
 st.write(data)
-st.line_chart(data[['PVOL', 'adj_close']])
+st.line_chart(data[['PVOL', 'volume']])
