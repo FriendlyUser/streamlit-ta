@@ -18,7 +18,8 @@ def user_input_features():
     ticker = st.sidebar.text_input("Ticker", 'IP.CN')
     start_date = st.sidebar.text_input("Start Date", '2019-01-01')
     end_date = st.sidebar.text_input("End Date", f'{today}')
-    return ticker, start_date, end_date
+    ta_range = st.sidebar.number_input("TA Range", min_value=1, max_value=50)
+    return ticker, start_date, end_date, ta_range
 
 symbol, start, end = user_input_features()
 
@@ -71,5 +72,5 @@ st.line_chart(data[['RSI_20', 'adj_close']])
 data.ta.pvol(length=20, append=True)
 # Plot
 st.header(f"Price-Volume\n {company_name}")
-st.line_chart(data[['PVOL_20', 'adj_close']])
 st.write(data)
+st.line_chart(data[['PVOL', 'adj_close']])
