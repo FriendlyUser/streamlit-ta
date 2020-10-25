@@ -72,7 +72,7 @@ st.line_chart(data[['RSI_20', 'adj_close']])
 data.ta.pvol(length=20, append=True)
 # Plot
 st.header(f"Price-Volume\n {company_name}")
-st.write(data)
+st.write(data[['adj_close', 'PVOL', 'volume']])
 col1, col2 = st.beta_columns([2, 2])
 col1.line_chart(data[['PVOL']])
 col2.line_chart(data[['volume']])
