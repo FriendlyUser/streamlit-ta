@@ -1,4 +1,4 @@
-# streamlit-ta
+# streamlit-ta [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/friendlyuser/streamlit-ta/main/app.py)
 Streamlit pandas ta for repo.
 
 
