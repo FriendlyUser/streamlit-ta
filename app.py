@@ -23,13 +23,7 @@ def user_input_features():
 
 symbol, start, end, ta_range = user_input_features()
 
-def get_symbol(symbol):
-    url = "http://d.yimg.com/autoc.finance.yahoo.com/autoc?query={}&region=1&lang=en".format(symbol)
-    result = requests.get(url).json()
-    for x in result['ResultSet']['Result']:
-        if x['symbol'] == symbol:
-            return x['name']
-company_name = get_symbol(symbol.upper())
+company_name = symbol.upper()
 
 start = pd.to_datetime(start)
 end = pd.to_datetime(end)
